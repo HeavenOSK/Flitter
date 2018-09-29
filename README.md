@@ -1,8 +1,3 @@
-# flitter
+# Flitter
 
-A new Flutter project.
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+It's to practice Flutter Layout Building through tracing my favorite app Twitter.
