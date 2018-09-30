@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flitter/ui/components/tweet_item.dart';
+import 'package:flitter/ui/components/tweet_card.dart';
 
 class Home extends StatelessWidget {
   @override
