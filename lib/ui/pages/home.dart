@@ -8,21 +8,33 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     var _homeListItems = List<HomeListItem>.generate(
       8,
-          (i) => HomeListItem(),
+      (i) => HomeListItem(),
     );
-    return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.account_circle, size: 40.0),
-        title: Text('ホーム'),
-        actions: <Widget>[
-          Icon(Icons.edit, color: Colors.lightBlueAccent),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(36.0),
+          child: AppBar(
+            leading: Icon(Icons.account_circle, size: 36.0),
+            elevation: 0.0,
+            title: Text('Home',
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700)),
+            actions: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
+                child: Center(
+                    child: Icon(Icons.edit,
+                        size: 26.0, color: Colors.lightBlue)),
+              ),
+            ],
+          ),
+        ),
+        body: ListView.builder(
+            itemCount: _homeListItems.length,
+            itemBuilder: (context, index) {
+              return _homeListItems[index];
+            }),
       ),
-      body: ListView.builder(
-          itemCount: _homeListItems.length,
-          itemBuilder: (context, index) {
-            return _homeListItems[index];
-          }),
     );
   }
 }
@@ -35,18 +47,18 @@ class HomeListItem extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             border: Border.all(
-              width: 1.2,
+              width: 0.4,
               color: Colors.grey,
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 12.0, 10.0, 10.0),
+            padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
             child: Container(
               height: 82.0,
               child: Row(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.fromLTRB(0.0, 0.0, 5.0, 0.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -71,7 +83,7 @@ class HomeListItem extends StatelessWidget {
                                           child: Text(
                                             'ヘブン🦌',
                                             style: TextStyle(
-                                                fontSize: 15.0,
+                                                fontSize: 16.0,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                         ),
