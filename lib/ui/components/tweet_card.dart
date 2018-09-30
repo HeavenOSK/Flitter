@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:flitter/models/tweet.dart';
 
-class TweetItem extends StatelessWidget {
-  TweetItem({
+class TweetCard extends StatelessWidget {
+  TweetCard({
     @required this.tweet,
   }) : assert(tweet != null);
 
