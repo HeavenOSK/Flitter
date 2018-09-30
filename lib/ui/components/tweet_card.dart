@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:flitter/models/tweet.dart';
+
 class TweetItem extends StatelessWidget {
+  TweetItem({
+    @required this.tweet,
+  }) : assert(tweet != null);
+
+  final Tweet tweet;
+
   final _fontSize = 16.0;
   final _mainColor = Colors.black87;
   final _subColor = Colors.blueGrey[600];
@@ -47,7 +56,7 @@ class TweetItem extends StatelessWidget {
           Row(
             children: <Widget>[
               Text(
-                'ヘブン🦌',
+                tweet.userName,
                 style: TextStyle(
                   fontSize: _fontSize,
                   fontWeight: FontWeight.bold,
@@ -55,7 +64,7 @@ class TweetItem extends StatelessWidget {
                 ),
               ),
               Text(
-                '@HeavenOSK･' + '2018/09/01',
+                '@' + tweet.accountName + '・' + tweet.getDateTimeStr(),
                 style: TextStyle(
                   fontSize: _fontSize,
                   fontWeight: FontWeight.w300,
@@ -74,7 +83,7 @@ class TweetItem extends StatelessWidget {
   Widget _buildContents() {
     return Container(
       child: Text(
-        '明日のGoogle Dev Fest楽しみやあ！',
+        tweet.contents,
         style: TextStyle(fontSize: _fontSize, color: _mainColor),
       ),
     );
