@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:flitter/ui/pages/home.dart';
 
@@ -34,24 +35,23 @@ class AppState extends State<App> {
 }
 
 CupertinoTabBar _buildFlitterTabBar(){
-  final iconSize = 28.0;
   return CupertinoTabBar(
     backgroundColor: Colors.white,
     items: <BottomNavigationBarItem>[
       BottomNavigationBarItem(
-        icon: Icon(Icons.home, size: iconSize),
+        icon: new Icon(Icons.home, size: 28.0),
         title: Text('',style: TextStyle(fontSize: 0.0)),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.search, size: iconSize),
+        icon: Icon(FontAwesomeIcons.search, size: 24.0),
         title: Text('',style: TextStyle(fontSize: 0.0)),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.notifications_none, size: iconSize),
+        icon: Icon(FontAwesomeIcons.bell, size: 24.0),
         title: Text('',style: TextStyle(fontSize: 0.0)),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.mail_outline, size: iconSize),
+        icon: Icon(FontAwesomeIcons.envelope, size: 24.0),
         title: Text('',style: TextStyle(fontSize: 0.0)),
       ),
     ],
