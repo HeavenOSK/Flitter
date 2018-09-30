@@ -64,7 +64,7 @@ class TweetCard extends StatelessWidget {
                 ),
               ),
               Text(
-                '@' + tweet.accountName + '・' + tweet.getDateTimeStr(),
+                ' @' + tweet.accountName + '･' + tweet.getDateTimeStr(),
                 style: TextStyle(
                   fontSize: _fontSize,
                   fontWeight: FontWeight.w300,
@@ -97,25 +97,50 @@ class TweetCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Icon(FontAwesomeIcons.comment, size: 16.0, color: _subColor),
-          Container(
-            width: 52.0,
-          ),
-          Icon(FontAwesomeIcons.retweet, size: 16.0, color: _subColor),
-          Container(
-            width: 52.0,
-          ),
-          Icon(FontAwesomeIcons.heart, size: 16.0, color: _subColor),
-          Container(
-            width: 52.0,
-          ),
-          Icon(FontAwesomeIcons.upload, size: 16.0, color: _subColor),
           Expanded(
+            flex: 1,
             child: Container(
-              margin: EdgeInsets.fromLTRB(0.0, 0.0, 4.0, 0.0),
-              alignment: Alignment.topRight,
-              child: Icon(Icons.equalizer, size: 20.0, color: _subColor),
+              padding: EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
+              child: tweet.repliedCount > 0
+                  ? Text(tweet.repliedCount.toString(),
+                      style: TextStyle(fontSize: 12.0))
+                  : Container(),
             ),
           ),
+          Icon(FontAwesomeIcons.retweet,
+              size: 16.0,
+              color: tweet.meRetweeted ? Colors.greenAccent : _subColor),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
+              child: tweet.retweetedCount > 0
+                  ? Text(tweet.retweetedCount.toString(),
+                      style: TextStyle(fontSize: 12.0))
+                  : Container(),
+            ),
+          ),
+          tweet.meLiked
+              ? Icon(FontAwesomeIcons.solidHeart, size: 16.0, color: Colors.red)
+              : Icon(FontAwesomeIcons.heart, size: 16.0, color: _subColor),
+          Expanded(
+            flex: 1,
+            child: Container(
+                padding: EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
+                child: Text(tweet.likedCount.toString(),
+                    style: TextStyle(fontSize: 12.0))),
+          ),
+          Icon(FontAwesomeIcons.upload, size: 16.0, color: _subColor),
+          tweet.meTweeted
+              ? Expanded(
+                  flex: 3,
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(0.0, 0.0, 4.0, 0.0),
+                    alignment: Alignment.topRight,
+                    child: Icon(Icons.equalizer, size: 20.0, color: _subColor),
+                  ),
+                )
+              : Container(width:50.0),
         ],
       ),
     );

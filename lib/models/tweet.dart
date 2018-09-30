@@ -7,6 +7,12 @@ class Tweet {
     @required this.accountName,
     @required this.dateTime,
     @required this.contents,
+    this.repliedCount = 0,
+    this.retweetedCount = 0,
+    this.likedCount = 0,
+    this.meTweeted = false,
+    this.meRetweeted: false,
+    this.meLiked: false,
   })  : assert(userName != null),
         assert(accountName != null),
         assert(dateTime != null),
@@ -17,8 +23,21 @@ class Tweet {
   final DateTime dateTime;
   final String contents;
 
-  String getDateTimeStr(){
-    String dateTImeStr = dateTime.year.toString()+'/'+dateTime.month.toString()+'/'+dateTime.day.toString();
+  final int repliedCount;
+  final int retweetedCount;
+  final int likedCount;
+
+  // ツイートに対して自分がアクションをしたか
+  final bool meTweeted;
+  final bool meRetweeted;
+  final bool meLiked;
+
+  String getDateTimeStr() {
+    String dateTImeStr = dateTime.year.toString() +
+        '/' +
+        dateTime.month.toString() +
+        '/' +
+        dateTime.day.toString();
     return dateTImeStr;
   }
 }
