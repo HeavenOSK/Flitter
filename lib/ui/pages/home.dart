@@ -7,9 +7,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var tweets = TweetHelper.getTweets();
-    var _homeListItems = List<TweetItem>.generate(
+    var _homeListItems = List<TweetCard>.generate(
       tweets.length,
-      (i) => TweetItem(tweet: tweets[i]),
+      (i) => TweetCard(tweet: tweets[i]),
     );
     return SafeArea(
       child: Scaffold(
