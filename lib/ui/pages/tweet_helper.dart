@@ -14,7 +14,7 @@ class TweetHelper {
     accountName: 'HeavenOSK',
     dateTime: DateTime(2018, 09, 05),
     contents: '明日のGoogle Dev Fest楽しみやあ！明日のGoogle Dev Fest楽しみやあ！',
-    isTweetedFromMe : true,
+    isTweetedByMe : true,
   );
   static final tweet03 = Tweet(
     userName: 'ヘブン🦌',
@@ -23,9 +23,9 @@ class TweetHelper {
     contents: '明日のGoogle Dev Fest楽しみやあ！明日のGoogle Dev Fest楽しみやあ！明日のGoogle Dev Fest楽しみやあ！',
     retweetedCount: 36,
     likedCount: 18,
-    isTweetedFromMe : false,
-    isRetweetedFromMe : true,
-    isLikedFromMe : true,
+    isTweetedByMe : false,
+    isRetweetedByMe : true,
+    isLikedByMe : true,
   );
 
   static final tweet04 = Tweet(
@@ -36,7 +36,7 @@ class TweetHelper {
     repliedCount:5,
     retweetedCount: 8,
     likedCount: 8,
-    isRetweetedFromMe : true,
+    isRetweetedByMe : true,
   );
 
   static final tweet05 = Tweet(
