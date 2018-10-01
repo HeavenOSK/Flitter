@@ -101,7 +101,7 @@ class TweetCard extends StatelessWidget {
             flex: 1,
             child: Container(
               padding: EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
-              child: tweet.repliedCount > 0
+              child: (tweet.repliedCount > 0)
                   ? Text(tweet.repliedCount.toString(),
                       style: TextStyle(fontSize: 12.0))
                   : Container(),
@@ -109,18 +109,18 @@ class TweetCard extends StatelessWidget {
           ),
           Icon(FontAwesomeIcons.retweet,
               size: 16.0,
-              color: tweet.meRetweeted ? Colors.greenAccent : _subColor),
+              color: (tweet.meRetweeted) ? Colors.greenAccent : _subColor),
           Expanded(
             flex: 1,
             child: Container(
               padding: EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
-              child: tweet.retweetedCount > 0
+              child: (tweet.retweetedCount > 0)
                   ? Text(tweet.retweetedCount.toString(),
                       style: TextStyle(fontSize: 12.0))
                   : Container(),
             ),
           ),
-          tweet.meLiked
+          (tweet.meLiked)
               ? Icon(FontAwesomeIcons.solidHeart, size: 16.0, color: Colors.red)
               : Icon(FontAwesomeIcons.heart, size: 16.0, color: _subColor),
           Expanded(
@@ -131,7 +131,7 @@ class TweetCard extends StatelessWidget {
                     style: TextStyle(fontSize: 12.0))),
           ),
           Icon(FontAwesomeIcons.upload, size: 16.0, color: _subColor),
-          tweet.meTweeted
+          (tweet.meTweeted)
               ? Expanded(
                   flex: 3,
                   child: Container(
@@ -140,7 +140,7 @@ class TweetCard extends StatelessWidget {
                     child: Icon(Icons.equalizer, size: 20.0, color: _subColor),
                   ),
                 )
-              : Container(width:50.0),
+              : Container(width: 50.0),
         ],
       ),
     );
