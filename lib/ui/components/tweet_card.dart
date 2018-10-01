@@ -109,7 +109,7 @@ class TweetCard extends StatelessWidget {
           ),
           Icon(FontAwesomeIcons.retweet,
               size: 16.0,
-              color: (tweet.isMeRetweeted) ? Colors.greenAccent : _subColor),
+              color: (tweet.isRetweetedFromMe) ? Colors.greenAccent : _subColor),
           Expanded(
             flex: 1,
             child: Container(
@@ -120,7 +120,7 @@ class TweetCard extends StatelessWidget {
                   : Container(),
             ),
           ),
-          (tweet.isMeLiked)
+          (tweet.isLikedFromMe)
               ? Icon(FontAwesomeIcons.solidHeart, size: 16.0, color: Colors.red)
               : Icon(FontAwesomeIcons.heart, size: 16.0, color: _subColor),
           Expanded(
@@ -131,7 +131,7 @@ class TweetCard extends StatelessWidget {
                     style: TextStyle(fontSize: 12.0))),
           ),
           Icon(FontAwesomeIcons.upload, size: 16.0, color: _subColor),
-          (tweet.isMeTweeted)
+          (tweet.isTweetedFromMe)
               ? Expanded(
                   flex: 3,
                   child: Container(

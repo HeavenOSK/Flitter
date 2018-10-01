@@ -10,9 +10,9 @@ class Tweet {
     this.repliedCount = 0,
     this.retweetedCount = 0,
     this.likedCount = 0,
-    this.isMeTweeted = false,
-    this.isMeRetweeted: false,
-    this.isMeLiked: false,
+    this.isTweetedFromMe = false,
+    this.isRetweetedFromMe: false,
+    this.isLikedFromMe: false,
   })  : assert(userName != null),
         assert(accountName != null),
         assert(dateTime != null),
@@ -28,9 +28,9 @@ class Tweet {
   final int likedCount;
 
   // ツイートに対して自分がアクションをしたか
-  final bool isMeTweeted;
-  final bool isMeRetweeted;
-  final bool isMeLiked;
+  final bool isTweetedFromMe;
+  final bool isRetweetedFromMe;
+  final bool isLikedFromMe;
 
   String getDateTimeStr() {
     String dateTImeStr = dateTime.year.toString() +
