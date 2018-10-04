@@ -29,8 +29,23 @@ class TweetCard extends StatelessWidget {
           // Profile 写真を表示する
           Padding(
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 5.0, 0.0),
-            child:
-                Icon(Icons.account_circle, size: 65.0, color: Colors.blueGrey),
+            child: (tweet.userImagetUrl == '')
+                ? Icon(Icons.account_circle, size: 65.0, color: Colors.blueGrey)
+                : Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Container(
+                        width: 56.0,
+                        height: 56.0,
+                        decoration: new BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: new DecorationImage(
+                            fit: BoxFit.cover,
+                            image: Image
+                                .asset('assets/sample_profile01.jpg')
+                                .image,
+                          ),
+                        )),
+                  ),
           ),
           Expanded(
             child: Column(
@@ -51,29 +66,33 @@ class TweetCard extends StatelessWidget {
   Widget _buildTopRow() {
     return Container(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Text(
-                tweet.userName,
-                style: TextStyle(
-                  fontSize: _fontSize,
-                  fontWeight: FontWeight.bold,
-                  color: _mainColor,
-                ),
-              ),
-              Text(
-                ' @' + tweet.accountName + '･' + tweet.getDateTimeStr(),
-                style: TextStyle(
-                  fontSize: _fontSize,
-                  fontWeight: FontWeight.w300,
-                  color: _subColor,
-                ),
-              ),
-            ],
+          Text(
+            tweet.userName,
+            style: TextStyle(
+              fontSize: _fontSize,
+              fontWeight: FontWeight.bold,
+              color: _mainColor,
+            ),
           ),
-          Icon(Icons.expand_more, color: Colors.grey, size: 24.0),
+          Text(
+            ' @' + tweet.accountName + '･' + tweet.getDateTimeStr(),
+            style: TextStyle(
+              fontSize: _fontSize,
+              fontWeight: FontWeight.w300,
+              color: _subColor,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              alignment: Alignment.topRight,
+              child: Icon(
+                Icons.expand_more,
+                color: Colors.grey,
+                size: 24.0,
+              ),
+            ),
+          ),
         ],
       ),
     );

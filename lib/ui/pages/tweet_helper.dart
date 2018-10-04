@@ -8,6 +8,7 @@ class TweetHelper {
     contents: '明日のGoogle Dev Fest楽しみやあ！',
     retweetedCount: 1,
     likedCount: 8,
+    userImagetUrl: 'basic'
   );
   static final tweet02 = Tweet(
     userName: 'ヘブン🦌',
@@ -46,6 +47,7 @@ class TweetHelper {
     contents: '明日のGoogle Dev Fest楽しみやあ！明日のGoogle Dev Fest楽しみやあ！明日のGoogle Dev Fest楽しみやあ！明日のGoogle Dev Fest楽しみやあ！明日のGoogle Dev Fest楽しみやあ！',
     repliedCount:1,
     likedCount: 1,
+    userImagetUrl: 'kkk'
   );
 
   static final tweet06 = Tweet(

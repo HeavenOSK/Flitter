@@ -7,6 +7,7 @@ class Tweet {
     @required this.accountName,
     @required this.dateTime,
     @required this.contents,
+    this.userImagetUrl = '',
     this.repliedCount = 0,
     this.retweetedCount = 0,
     this.likedCount = 0,
@@ -20,6 +21,7 @@ class Tweet {
 
   final String userName;
   final String accountName;
+  final String userImagetUrl;
   final DateTime dateTime;
   final String contents;
 
