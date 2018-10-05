@@ -100,11 +100,54 @@ class TweetCard extends StatelessWidget {
 
   //Tweetの内容部分
   Widget _buildContents() {
-    return Container(
-      child: Text(
-        tweet.contents,
-        style: TextStyle(fontSize: _fontSize, color: _mainColor),
-      ),
+    return Column(
+      children: <Widget>[
+        Container(
+          child: Text(
+            tweet.contents,
+            style: TextStyle(fontSize: _fontSize, color: _mainColor),
+          ),
+        ),
+        //todo: Separate this padding widget above linkCard
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 0.0),
+          child: Column(
+            children: <Widget>[
+              Container(
+                  width: 1000.0,
+                  height: 250.0,
+                  decoration: new BoxDecoration(
+                    image: new DecorationImage(
+                      image: Image.asset('assets/link_sample_image.jpeg').image,
+                    ),
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'UdacityのFlutterコースに取り組んでみる #6 (Navigation編) - heavenosk’s blog',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        fontSize: _fontSize,
+                      ),
+                    ),
+                    Text(
+                      'heavenosk.hatenablog.com',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        color: _subColor,
+                        fontSize: _fontSize,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
