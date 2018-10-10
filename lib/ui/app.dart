@@ -37,6 +37,7 @@ class AppState extends State<App> {
 CupertinoTabBar _buildFlitterTabBar(){
   return CupertinoTabBar(
     backgroundColor: Colors.white,
+    activeColor: Colors.lightBlue,
     items: <BottomNavigationBarItem>[
       BottomNavigationBarItem(
         icon: new Icon(Icons.home, size: 28.0),
