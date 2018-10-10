@@ -4,4 +4,4 @@ It's to practice Flutter Layout Building through tracing my favorite app Twitter
 
 This is a current progress.
 
-<img width="465" alt="screen shot 2018-10-01 at 5 59 07" src="https://user-images.githubusercontent.com/19836917/46269870-f4e50100-c57e-11e8-8e1f-294e58ad6777.png">
+<img width="545" alt="screen shot 2018-10-10 at 21 30 10" src="https://user-images.githubusercontent.com/19836917/46736555-4eae9f00-ccd4-11e8-9a97-d97e46b90150.png">
