@@ -31,11 +31,13 @@ class Home extends StatelessWidget {
             ],
           ),
         ),
-        body: ListView.builder(
-            itemCount: _homeListItems.length,
-            itemBuilder: (context, index) {
-              return _homeListItems[index];
-            }),
+        body: Center(
+          child: ListView.builder(
+              itemCount: _homeListItems.length,
+              itemBuilder: (context, index) {
+                return _homeListItems[index];
+              }),
+        ),
       ),
     );
   }
