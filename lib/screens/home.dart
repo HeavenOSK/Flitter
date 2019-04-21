@@ -1,16 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flitter/ui/components/tweet_card.dart';
-import 'tweet_helper.dart';
+import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var tweets = TweetHelper.getTweets();
-    var _homeListItems = List<TweetCard>.generate(
-      tweets.length,
-      (i) => TweetCard(tweet: tweets[i]),
-    );
     return SafeArea(
       child: Scaffold(
         appBar: PreferredSize(
@@ -30,13 +23,6 @@ class Home extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        body: Center(
-          child: ListView.builder(
-              itemCount: _homeListItems.length,
-              itemBuilder: (context, index) {
-                return _homeListItems[index];
-              }),
         ),
       ),
     );
